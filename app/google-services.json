@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414681695854",
+    "project_id": "expense-management-92fda",
+    "storage_bucket": "expense-management-92fda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414681695854:android:596b1c401b89f18527487f",
+        "android_client_info": {
+          "package_name": "com.example.tripmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414681695854-55kcbso3up0v6rrulrllfb8o2n5et45f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuVmij1jts93sNesqk9Jx3lGFLo2aFs8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414681695854-55kcbso3up0v6rrulrllfb8o2n5et45f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

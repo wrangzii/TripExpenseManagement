@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rowBG"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="4dp"
+        android:background="#FF0000"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/edit_task"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:tint="@android:color/white"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/delete_task"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_delete_24"
+                    app:tint="@android:color/white"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rowFG"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginVertical="4dp"
+        android:background="@color/teal_200"
+        android:clickable="true"
+        android:focusable="true">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/bg_end_view" />
+
+
+        <ImageView
+            android:id="@+id/icon_iv"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:padding="0dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/destination_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trip_name_tv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="72dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="5dp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            tools:text="Destination" />
+
+        <TextView
+            android:id="@+id/trip_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_alignTop="@+id/icon_iv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingStart="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="Trip Name" />
+
+        <TextView
+            android:id="@+id/date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trip_name_tv"
+            android:layout_alignEnd="@+id/trip_name_tv"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            tools:text="time" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

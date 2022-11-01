@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dialog_add">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/update_the_trip"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_name_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/name"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Required"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_name_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_destination_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/destination"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Required"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_name_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_destination_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_date_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/date"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Required"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_destination_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_date_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="datetime"
+                    app:helperTextEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_description_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/description"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Optional"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_date_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_description_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:helperTextEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_necessary_stuff_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/necessary_stuff"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Optional"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_description_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_necessary_stuff_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:helperTextEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_weather_condition_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="378dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/weather_condition"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Optional"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_necessary_stuff_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_weather_condition_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:helperTextEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_trip_recommended_destination_til"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:hint="@string/recommended_destination"
+                android:singleLine="true"
+                app:boxStrokeColor="@color/dialog_add"
+                app:helperText="Optional"
+                app:hintTextColor="@color/dialog_add"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_weather_condition_til">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_trip_recommended_destination_tiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:helperTextEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/edit_risk_assessment_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/require_risk_assessment"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/edit_trip_recommended_destination_til"
+                app:layout_constraintVertical_bias="0.179"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <RadioGroup
+                android:id="@+id/edit_radioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/radio_button_yes"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/edit_risk_assessment_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/edit_risk_assessment_title_tv">
+
+            </RadioGroup>
+
+
+            <RadioGroup
+                android:id="@+id/edit_radioGroup2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:checkedButton="@+id/radio_button_inbound"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteX="24dp"
+                tools:layout_editor_absoluteY="597dp" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:gravity="end"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/edit_radioGroup2"
+                app:layout_constraintTop_toBottomOf="@id/edit_radioGroup2">
+
+                <Button
+                    android:id="@+id/edit_cancel_btn"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:textColor="@color/dialog_add" />
+
+                <Button
+                    android:id="@+id/update_trip_btn"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update"
+                    android:textColor="@color/dialog_add" />
+
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="112dp"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_risk_assessment_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_risk_assessment_title_tv"
+                app:layout_constraintVertical_bias="1.0" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
