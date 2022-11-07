@@ -1,5 +1,9 @@
 package com.example.tripmanagement;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -21,6 +27,16 @@ import com.example.tripmanagement.dao.ExpenseDao;
 import com.example.tripmanagement.dao.TripDao;
 import com.example.tripmanagement.model.Expense;
 import com.example.tripmanagement.model.Trip;
+import com.example.tripmanagement.model.User;
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.BeginSignInResult;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
+import com.google.android.gms.auth.api.identity.SignInCredential;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
@@ -51,10 +67,17 @@ import java.util.Locale;
 import java.util.Objects;
 
 import com.example.tripmanagement.model.Backup;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     RecyclerView rvTrip;
     TripListAdapter tripListAdapter;
     FloatingActionButton btnAdd;
@@ -65,7 +88,11 @@ public class MainActivity extends AppCompatActivity {
     TextView tvNoTrip;
     SearchView svSearch;
     ImageView btnFilter;
-    TextView tvFilter;
+    TextView tvFilter, nameTxt;
+    Button logoutButton;
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
 
     // date format
     static final String format = "MM/dd/yyyy";
@@ -107,6 +134,31 @@ public class MainActivity extends AppCompatActivity {
         svSearch = findViewById(R.id.sv_search);
         btnFilter = findViewById(R.id.iv_search_picker);
         tvFilter = findViewById(R.id.filter_add_btn);
+        nameTxt = findViewById(R.id.nameTxt);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userId = user.getUid();
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userData = snapshot.getValue(User.class);
+                String fullName = userData.fullName;
+                nameTxt.setText("Welcome, " + fullName + "!");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this, "Something was wrong!", Toast.LENGTH_LONG);
+            }
+        });
+        logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, LoginUserFragment.class));
+            }
+        });
 
         // recyclerView settings
         tripList = TripDao.getAll(this);
@@ -331,7 +383,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
     /**
      * show dialog to pick search type when click down arrow button
@@ -903,5 +954,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 }
 

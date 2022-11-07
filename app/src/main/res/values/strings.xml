@@ -75,6 +75,7 @@
     <string name="triptype">Trip type ?</string>
     <string name="inbound">Inbound</string>
     <string name="outbound">Outbound</string>
+    <string name="client_id">944306943943-n5n2d22f1jlqolbg96aeimq8fs7drqp5.apps.googleusercontent.com</string>
 
     <string name="backup_all">Backup </string>
     <string name="backup_all_trips">Backup all the trips</string>
@@ -82,6 +83,16 @@
     <string name="backup_fail">Backup Failed</string>
     <string name="label_backup_firestore">Doing Backup</string>
     <string name="confirm_backup_all_trips">Are you sure you want to back up all the trips?</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="action_register">Register</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="title_login">Login</string>
+    <string name="email">email</string>
+    <string name="full_name">Full name:</string>
+    <string name="emailtxt">Email:</string>
+    <string name="age">Age:</string>
 
 
 </resources>
