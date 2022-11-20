@@ -25,12 +25,13 @@
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:background="#D6BFBF"
         android:backgroundTint="#E5A9EF"
         android:text="@string/password"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/passwordTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/usernameTxt"
@@ -50,17 +51,15 @@
         android:id="@+id/passwordTxt"
         android:layout_width="253dp"
         android:layout_height="46dp"
-        android:layout_marginTop="36dp"
         android:layout_marginEnd="40dp"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
         android:singleLine="true"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/forgotPasswordButton"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTxt"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView"
@@ -81,13 +80,14 @@
         android:id="@+id/forgotPasswordButton"
         android:layout_width="341dp"
         android:layout_height="75dp"
-        android:layout_marginBottom="248dp"
         android:backgroundTint="@color/purple_200"
         android:text="@string/title_login"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_background_image"
+        app:layout_constraintBottom_toTopOf="@+id/forgotPasswordTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.834" />
 
     <TextView
         android:id="@+id/forgotPasswordTxt"
@@ -100,23 +100,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/registerTxt"
         app:layout_constraintHorizontal_bias="0.322"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/registerTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="188dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="196dp"
         android:text="@string/action_register"
         android:textColor="#040303"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_background_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordButton"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintTop_toTopOf="@+id/forgotPasswordTxt" />
 
     <TextView
         android:id="@+id/textView6"
